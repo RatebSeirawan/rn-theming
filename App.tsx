@@ -1,19 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {AppearanceProvider} from 'react-native-appearance';
+import {ThemeProvider} from './theme/ThemeProvider';
+import {Screen, Switch, Message} from './components';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <AppearanceProvider>
+      <ThemeProvider>
+      <Screen>
+        <Switch />
+        <Message />
+      </Screen>
+      </ThemeProvider>
+    </AppearanceProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
